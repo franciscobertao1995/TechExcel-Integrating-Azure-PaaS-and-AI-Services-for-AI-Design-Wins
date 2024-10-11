@@ -22,7 +22,8 @@ def get_hotel_bookings(hotel_id):
 @st.cache_data
 def invoke_chat_endpoint(question):
     """Invoke the chat endpoint with the specified question."""
-    api_endpoint = st.secrets["api"]["endpoint"]
+    #api_endpoint = st.secrets["api"]["endpoint"]
+    api_endpoint = "https://oiuqhyfs52p4q-api.azurewebsites.net"
     response = requests.post(f"{api_endpoint}/Chat", data={"message": question}, timeout=10)
     return response
 
